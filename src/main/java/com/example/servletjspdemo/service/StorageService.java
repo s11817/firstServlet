@@ -3,18 +3,19 @@ package com.example.servletjspdemo.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.servletjspdemo.domain.Person;
+import com.example.servletjspdemo.*;
+import com.example.servletjspdemo.web.Data;
 
 public class StorageService {
 	
-	private List<Person> db = new ArrayList<Person>();
+	private List<Data> db = new ArrayList<Data>();
 	
-	public void add(Person person){
-		Person newPerson = new Person(person.getFirstName(), person.getYob());
-		db.add(newPerson);
+	public void add(Data user){
+		Data newuser = new Data(user.getName(), user.getSurname(), user.getEmail(), user.getWorkname(),user.getInfo(), user.getWork());
+		db.add(newuser);
 	}
-	
-	public List<Person> getAllPersons(){
+	 
+	public List<Data> getAllUsers(){
 		return db;
 	}
 

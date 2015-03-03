@@ -8,14 +8,24 @@
 </head>
 <body>
 
-<jsp:useBean id="storage" class="com.example.servletjspdemo.service.StorageService" scope="application" />
-<jsp:useBean id="person" class="com.example.servletjspdemo.domain.Person" scope="session" />
 
-<form action="addPerson.jsp">
+<form action="GettingServlet">
 
-  First name :<input type="text" name="firstName" value="${person.firstName}" /><br />
-  Year of birth :<input type="text"  name="yob" value="${person.yob}" /><br />
-  <input type="submit" value=" OK ">
+  First name :<input type="text" name="name" /><br />
+  Surname :<input type="text" name="surname" /><br />
+  E-m@il :<input type="text" name="email" /><br />
+  Confirm E-m@il :<input type="text" name="email2" /><br />
+  Work name :<input type="text" name="workname" /><br />
+  Info from:
+  <br />
+   <input type="radio" name="info" value="workInfo" >Work info<br>
+   <input type="radio" name="info" value="schoolInfo">School info<br>
+   <input type="radio" name="info" value="facebook">Facebook<br>
+   <input type="radio" name="info" value="friends">Friends<br>
+   <input type="radio" name="info" value="other">Other<br>
+  Kind of ur work :<input type="text" name="work" /><br />
+  
+ <input type="submit" value=" OK ">
   
 </form>
 
