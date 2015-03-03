@@ -26,11 +26,23 @@ public class DataViewer extends HttpServlet  {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-	//	int id=1;
-		response.getWriter().println("Hello!");
-		for(int i=0; i<5 ; i++) response.getWriter().println(user[i].getName());
-		 
+	
 		
+		response.getWriter().println("Hello!");
+		response.getWriter().println("Zapisani u¿ytkownicy to: ");
+		for( int idv=0; idv < Data.id ; idv++){
+			response.getWriter().println(" ");
+			response.getWriter().println("User nr: " + (idv+1));
+			response.getWriter().println("name: "+Data.user[idv].getName());
+			response.getWriter().println("surname: "+Data.user[idv].getSurname());
+			response.getWriter().println("email: "+Data.user[idv].getEmail());
+			response.getWriter().println("workname: "+Data.user[idv].getWorkname());
+			response.getWriter().println("info: "+Data.user[idv].getInfo());
+			response.getWriter().println("work: "+Data.user[idv].getWork());
+			
+			
+			
+		}
 		
 	}
 	

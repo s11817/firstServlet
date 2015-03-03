@@ -8,19 +8,23 @@ public class Data {
 	String workname;
 	String info;
 	String work;
-	
-	public Data() {
-		super();
-	}
-	
+    public static int id = 0;
+    public static Data[] user = new Data[5];
+
+    
+    
+    
+
 	public Data(String name, String surname, String email, String workname, String info, String work) {
-		super();
+		//super();
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
 		this.workname = workname;
 		this.info = info;
 		this.work = work;
+		user[id] = this;
+		//id ++;
 	}
 	
 	

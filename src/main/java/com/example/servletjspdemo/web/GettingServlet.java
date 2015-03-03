@@ -11,10 +11,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/GettingServlet")
 public class GettingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public static int id = 1;
-    public static Data user[] = new Data[5];
   
-	
+		
     public GettingServlet() {
     	
 		
@@ -27,27 +25,26 @@ public class GettingServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		if(session.getAttribute("name") != null) response.sendRedirect("wasSend.jsp");
-		if(id>5) response.sendRedirect("noPlace.jsp");
+		if(Data.id>4) response.sendRedirect("noPlace.jsp");
 		
-		int i = id -1;
 		
-		user[i] = new Data();
+		//Data nowy = new Data();
+		Data.user[Data.id] = new Data(null, null, null, null, null, null);
 
-		user[i].setName(request.getParameter("name"));
-		user[i].setSurname(request.getParameter("surname"));
-		user[i].setEmail(request.getParameter("email"));
-		user[i].setWorkname(request.getParameter("workname"));
-		user[i].setInfo(request.getParameter("info"));
-		user[i].setWork(request.getParameter("work"));
+		Data.user[Data.id].setName(request.getParameter("name"));
+		Data.user[Data.id].setSurname(request.getParameter("surname"));
+		Data.user[Data.id].setEmail(request.getParameter("email"));
+		Data.user[Data.id].setWorkname(request.getParameter("workname"));
+		Data.user[Data.id].setInfo(request.getParameter("info"));
+		Data.user[Data.id].setWork(request.getParameter("work"));
 	
-		response.getWriter().println("thanks for form "+user[i].getName());
+		response.getWriter().println("Thanks for form ");
 	
-	session.setAttribute("name",user[i].getName());
+	session.setAttribute("name",Data.user[Data.id].getName());
 
 
-	id++;
 	
-	
+	Data.id++;
 	
 	}
 

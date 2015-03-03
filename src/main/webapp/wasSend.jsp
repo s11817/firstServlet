@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-Your form has been sent.
+Sending goes wrong.
+Your form already has been sent.
 </body>
 </html>
